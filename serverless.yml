@@ -1,0 +1,14 @@
+service: Proyecto-noticias
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: python3.9
+
+useDotenv: True
+
+functions:
+  - ${file(services/users.yml)}
+
+plugins:
+  - serverless-offline

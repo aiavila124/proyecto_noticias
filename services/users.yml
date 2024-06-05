@@ -1,0 +1,21 @@
+create_user:
+  handler: Handler/handler.create_user
+  timeout: 29
+  events:
+    - httpApi:
+        path: /create_user
+        method: POST
+
+get_filter_users:
+  handler: Handler/handler.get_filter_users
+  events:
+    - httpApi:
+        path: /get_filter_users
+        method: POST
+
+get_token:
+  handler: Handler/handler.get_token
+  events:
+    - httpApi:
+        path: /get_token
+        method: POST
