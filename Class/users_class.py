@@ -93,9 +93,6 @@ class UsersClass:
         if not query:
             raise Warning(c.INCORRECT_CREDENTIALS)
         
-        # response ={
-        #     "Idtoken": str(get_token(data))
-        # }
         
         return get_token(data)
 
@@ -120,7 +117,6 @@ class UsersClass:
         
         try:     
             payload = jwt.decode(self.token, key, algorithms = ["HS256"])
-            print("AA", payload)
             return payload["username"]
 
         except jwt.ExpiredSignatureError:

@@ -9,17 +9,11 @@ def http(func):
         try:
             event = args[0]
             
-            print("AAAAAAAAAA")
-            # if Permisos().validate_permission(event["rawPath"]):
-                # token = event["headers"]["authorization"].split(" ")[1]
-
-                # print("TOKEN", token)
-                # UsersClass(token).validate_user()
-
-  
-                # user = UsersClass(token).get_user()
-
-                # Permisos().get_permisos(user.profiles_id, event["rawPath"])
+            if Permisos().validate_permission(event["rawPath"]):
+                token = event["headers"]["authorization"].split(" ")[1]
+                UsersClass(token).validate_user()
+                user = UsersClass(token).get_user()
+                Permisos().get_permisos(user.profiles_id, event["rawPath"])
                 
             response = func(*args, **kwargs)
             

@@ -14,7 +14,8 @@ class Permisos:
         
         query = self.session.query(RolePermissions).filter(
             RolePermissions.functions_id == function_id,
-            RolePermissions.profiles_id == profile_id
+            RolePermissions.profiles_id == profile_id,
+            RolePermissions.active == c.ACTIVE
         ).first()
 
         self.session.close()
@@ -39,9 +40,8 @@ class Permisos:
 
         self.session.close()
 
-        if query.need_permission == c.ACTIVE:
-            return True
+        if not query:
+            raise Warning(c.FUNCTION_NOT_FOUND)
 
-        else:
-            return False
-
+        return query.need_permission == c.ACTIVE
+    

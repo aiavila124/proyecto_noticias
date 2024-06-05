@@ -57,3 +57,6 @@ def get_token(data):
 
     return str(token).split("'")[1]
 
+def validate_token(token):
+    return jwt.decode(token, key=os.getenv('SECRET_KEY'), algorithms=['HS256'])
+
