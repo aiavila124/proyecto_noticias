@@ -1,0 +1,63 @@
+create_user:
+  handler: Handler/users_handler.create_user
+  timeout: 29
+  events:
+    - httpApi:
+        path: /create_user
+        method: POST
+
+get_filter_users:
+  handler: Handler/users_handler.get_filter_users
+  events:
+    - httpApi:
+        path: /get_filter_users
+        method: POST
+
+get_token:
+  handler: Handler/users_handler.get_token
+  events:
+    - httpApi:
+        path: /get_token
+        method: POST
+
+create_function:
+  handler: Handler/users_handler.create_function
+  events:
+    - httpApi:
+        path: /create_function
+        method: POST
+
+create_role_permission:
+  handler: Handler/users_handler.create_role_permission
+  events:
+    - httpApi:
+        path: /create_role_permission
+        method: POST
+
+create_profile:
+  handler: Handler/users_handler.create_profile
+  events:
+    - httpApi:
+        path: /create_profile
+        method: POST
+
+get_functions:
+  handler: Handler/users_handler.get_functions
+  events:
+    - httpApi:
+        path: /get_functions
+        method: GET
+
+get_profile:
+  handler: Handler/users_handler.get_profile
+  events:
+    - httpApi:
+        path: /get_profile
+        method: GET
+
+get_role_permission:
+  handler: Handler/users_handler.get_role_permission
+  events:
+    - httpApi:
+        path: /get_role_permission
+        method: GET

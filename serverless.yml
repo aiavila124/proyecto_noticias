@@ -8,7 +8,8 @@ provider:
 useDotenv: True
 
 functions:
-  - ${file(services/users.yml)}
+  - ${file(serverless/users.yml)}
+  - ${file(serverless/news.yml)}
 
 plugins:
   - serverless-offline

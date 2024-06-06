@@ -4,5 +4,8 @@ notas.md
 
 # cache
 /Class/__pycache__/
+/Handler/__pycache__/
+/Helpers/__pycache__/
+/Utils/__pycache__/
 
 venv/

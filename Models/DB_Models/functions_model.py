@@ -1,6 +1,6 @@
 from sqlalchemy import func, String, Integer, Column, Date, TIMESTAMP
 from Class.database import Database as DB
-from Helpers.constantes import ACTIVE, INACTIVE
+from Helpers.constantes import ACTIVE
 
 class Function(DB.base_class):
     __tablename__ = 'functions'
@@ -16,3 +16,8 @@ class Function(DB.base_class):
         self.function_name = data["function_name"]
         self.path = data["path"]
         self.need_permission = data["need_permission"]
+
+    def as_dict(self):
+        data = {c.name: getattr(self, c.name) for c in self.__table__.columns}
+        data["registration_date"] = self.registration_date.isoformat()
+        return data

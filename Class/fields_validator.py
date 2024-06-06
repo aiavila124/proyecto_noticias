@@ -15,3 +15,9 @@ class UserValidator(Schema):
     gender_id = fields.Int(required=True)
     city_id = fields.Int(required=True)
 
+class NewsValidator(Schema):
+    title = fields.Str(required=True)
+    content = fields.Str(required=True)
+    category_id = fields.Int(required=True)
+    featured_image = fields.Str
+    summary = fields.Str

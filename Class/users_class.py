@@ -1,6 +1,5 @@
 import jwt
 import os
-from datetime import datetime
 from Models.DB_Models.users_model import Users
 from sqlalchemy import or_
 from Class.database import Database as DB
@@ -11,7 +10,6 @@ from Helpers.basic_helper import (
 )
 from Helpers.send_mail import send_mail
 from Models.process_sql import ProcessSql
-from Models.DB_Models.functions_model import Function
 
 class UsersClass:
     def __init__(self, token = ""):
@@ -128,10 +126,3 @@ class UsersClass:
         except jwt.InvalidTokenError:
             raise Warning(c.INCORRECT_CREDENTIALS)
     
-        
-        
-       
-
-
-        
-        

@@ -28,20 +28,20 @@ class Permisos:
         query = self.session.query(Function).filter(
             Function.path == path
         ).first()
-
         self.session.close()
+        
+        if not query:
+            raise Warning(c.FUNCTION_NOT_FOUND)
 
         return query.id
     
     def validate_permission(self, path):
         query = self.session.query(Function).filter(
             Function.id == self.get_id_function(path),
+            Function.active == c.ACTIVE
         ).first()
 
         self.session.close()
-
-        if not query:
-            raise Warning(c.FUNCTION_NOT_FOUND)
 
         return query.need_permission == c.ACTIVE
     

@@ -1,0 +1,6 @@
+create_news:
+  handler: Handler/news_handler.create_news
+  events:
+    - httpApi:
+        path: /create_news
+        method: POST

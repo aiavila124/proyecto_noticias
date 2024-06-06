@@ -45,7 +45,15 @@ FIELD_VALIDATION = "Error in field {0}: {1}"
 INCORRECT_CREDENTIALS = "Credenciales incorrectas."
 NOT_PERMMITED = "No tiene permisos para realizar esta operación."
 TOKEN_EXPIRED = "The incoming token has expired."
-FUNCTION_NOT_FOUND = "Function not found"
 
 # mails subjects
 CREATE_USER_CONFIRMATION = 1
+
+# News Status
+EDITING = 1
+READY = 2
+
+# Function messages
+FUNCTION_NOT_FOUND = "The current function has not been registered"
+MESSAGE_IF_EXITS = "The current {0} {1} already exists"
+

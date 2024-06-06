@@ -17,4 +17,6 @@ class RolePermissions(DB.base_class):
 
 
     def as_dict(self):
-        return {c.name: getattr(self, c.name) for c in self.__table__.columns}
+        data = {c.name: getattr(self, c.name) for c in self.__table__.columns}
+        data["registration_date"] = self.registration_date.isoformat()
+        return data
